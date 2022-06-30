@@ -1,10 +1,10 @@
 /*
  * @Description: WebStorage
  * @Version: 1.0
- * @Autor: jiajun wu
+ * @Autor: yn36
  * @Date: 2022-04-19 11:41:43
- * @LastEditors: jiajun wu
- * @LastEditTime: 2022-04-19 12:02:11
+ * @LastEditors: yn36
+ * @LastEditTime: 2022-06-30 16:56:25
  */
 
 export interface Options {

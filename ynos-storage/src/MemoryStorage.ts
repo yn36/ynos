@@ -1,14 +1,14 @@
 /*
  * @Description: MemoryStorage
  * @Version: 1.0
- * @Autor: jiajun wu
+ * @Autor: yn36
  * @Date: 2022-04-24 17:26:22
- * @LastEditors: jiajun wu
- * @LastEditTime: 2022-04-24 17:26:38
+ * @LastEditors: yn36
+ * @LastEditTime: 2022-06-30 17:11:09
  */
 /* eslint class-methods-use-this: off */
 
-let ls: any = {};
+let ynosLs: any = {};
 
 class MemoryStorageInterface {
   constructor() {
@@ -19,7 +19,7 @@ class MemoryStorageInterface {
        * @return {number}
        */
       get() {
-        return Object.keys(ls).length;
+        return Object.keys(ynosLs).length;
       },
     });
   }
@@ -31,7 +31,7 @@ class MemoryStorageInterface {
    * @returns {*}
    */
   getItem(name: string) {
-    return name in ls ? ls[name] : null;
+    return name in ynosLs ? ynosLs[name] : null;
   }
 
   /**
@@ -42,7 +42,7 @@ class MemoryStorageInterface {
    * @returns {boolean}
    */
   setItem(name: string | number, value: any) {
-    ls[name] = value;
+    ynosLs[name] = value;
 
     return true;
   }
@@ -54,10 +54,10 @@ class MemoryStorageInterface {
    * @returns {boolean}
    */
   removeItem(name: string) {
-    const found = name in ls;
+    const found = name in ynosLs;
 
     if (found) {
-      return delete ls[name];
+      return delete ynosLs[name];
     }
 
     return false;
@@ -69,7 +69,7 @@ class MemoryStorageInterface {
    * @returns {boolean}
    */
   clear() {
-    ls = {};
+    ynosLs = {};
 
     return true;
   }
@@ -81,7 +81,7 @@ class MemoryStorageInterface {
    * @returns {*}
    */
   key(index: string | number) {
-    const keys: any = Object.keys(ls);
+    const keys: any = Object.keys(ynosLs);
 
     return typeof keys[index] !== 'undefined' ? keys[index] : null;
   }
