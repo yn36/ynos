@@ -1,0 +1,32 @@
+[package]
+name = "ynos-wasm"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.75", features = ["serde-serialize"] }
+js-sys = "0.3.55"
+
+[dependencies.web-sys]
+version = "0.3.55"
+features = [
+  # 'CanvasRenderingContext2d',
+  # 'CssStyleDeclaration',
+  # 'Document',
+  # 'Element',
+  # 'EventTarget',
+  # 'HtmlCanvasElement',
+  # 'HtmlElement',
+  # 'MouseEvent',
+  # 'Node',
+  # 'HtmlDocument',
+  'Window',
+  'BroadcastChannel',
+  # 'Storage',
+  # 'Document',
+]

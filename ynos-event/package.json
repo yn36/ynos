@@ -1,6 +1,6 @@
 {
-  "name": "ynos-storage",
-  "version": "1.0.1",
+  "name": "ynos-event",
+  "version": "1.0.0",
   "description": "本地存储库",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,15 +12,11 @@
     "dist"
   ],
   "keywords": [
-    "本地存储库",
-    "local",
-    "storage",
-    "session",
-    "sessionStorage",
-    "localStorage",
+    "全局事件",
     "vue3",
     "vue2",
-    "ts"
+    "ts",
+    "event"
   ],
   "author": "yn36",
   "license": "ISC",

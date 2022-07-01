@@ -1,10 +1,10 @@
 /*
  * @Description: 加载器
  * @Version: 1.0
- * @Autor: jiajun wu
+ * @Autor: yn36
  * @Date: 2022-04-24 10:17:12
- * @LastEditors: jiajun wu
- * @LastEditTime: 2022-07-01 14:25:16
+ * @LastEditors: yn36
+ * @LastEditTime: 2022-07-01 16:16:20
  */
 import { WebStorage } from './src//WebStorage'
 import { MemoryStorage } from './src/MemoryStorage'
