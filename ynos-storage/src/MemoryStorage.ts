@@ -3,12 +3,16 @@
  * @Version: 1.0
  * @Autor: yn36
  * @Date: 2022-04-24 17:26:22
- * @LastEditors: yn36
- * @LastEditTime: 2022-06-30 17:11:09
+ * @LastEditors: jiajun wu
+ * @LastEditTime: 2022-07-01 11:13:01
  */
 /* eslint class-methods-use-this: off */
 
-let ynosLs: any = {};
+interface Ls {
+  [key: string]: Array<any>
+}
+
+let ynosLs: Ls = {};
 
 class MemoryStorageInterface {
   constructor() {

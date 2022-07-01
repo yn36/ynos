@@ -4,7 +4,7 @@
  * @Autor: jiajun wu
  * @Date: 2022-04-24 10:17:12
  * @LastEditors: jiajun wu
- * @LastEditTime: 2022-06-30 15:30:13
+ * @LastEditTime: 2022-07-01 14:25:16
  */
 import { WebStorage } from './src//WebStorage'
 import { MemoryStorage } from './src/MemoryStorage'
@@ -21,18 +21,12 @@ export interface Option {
 // eslint-disable-next-line
 const _global: any = (typeof window !== 'undefined' ? window : globalThis || {});
 
-export const VueStorage = {
-  install(Vue: any, options: Option = {}) {
-    let version: Array<string> = Vue?.version?.split('.') || []
-    if (version.length <= 0) {
-      console.error('暂未获取vue版本')
-      return false
-    }
-
+export const Storage = {
+  useStorage(options: Option = {}) {
     const _options = {
       ...options,
       storage: options.storage || 'local',
-      name: options.name || options.storage == 'local' ? 'ls' : options.storage == 'session' ? 'ss' : 'storage',
+      name: options.name || 'ls',
     };
 
     if (_options.storage && ['local', 'session', 'memory'].indexOf(_options.storage) === -1) {
@@ -63,7 +57,6 @@ export const VueStorage = {
       store = MemoryStorage;
       // eslint-disable-next-line
       console.error(`ynos-storage: Storage "${_options.storage}" 系统不支持，请使用内存存储`);
-      return
     }
 
     const ls = new WebStorage(store);
@@ -71,6 +64,16 @@ export const VueStorage = {
     ls.setOptions(Object.assign(ls.options, {
       namespace: '',
     }, _options || {}));
+
+    return { ls, _options }
+  },
+  install(Vue: any, options: Option = {}) {
+    let version: Array<string> = Vue?.version?.split('.') || []
+    if (version.length <= 0) {
+      console.error('暂未获取vue版本')
+      return false
+    }
+    const { ls, _options } = this.useStorage(options);
 
     if (version[0] == '2') {
       Vue[_options.name] = ls; // eslint-disable-line
@@ -85,6 +88,7 @@ export const VueStorage = {
         },
       });
     } else if (version[0] == '3') {
+      Vue[_options.name] = ls; // eslint-disable-line
       Vue.config.globalProperties[_options.name] = ls;
       return Vue
     }
@@ -92,6 +96,6 @@ export const VueStorage = {
 }
 
 // eslint-disable-next-line
-_global.VueStorage = VueStorage;
+_global.Storage = Storage;
 
-export default { VueStorage, WebStorage };
+export default Storage;
