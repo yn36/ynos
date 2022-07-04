@@ -1,0 +1,1 @@
+export { default as YSpeechRecognition } from './src/SpeechRecognition'
