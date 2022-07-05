@@ -1,18 +1,10 @@
-/*
- * @Description: 
- * @Version: 1.0
- * @Autor: jiajun wu
- * @Date: 2022-01-21 13:53:39
- * @LastEditors: jiajun wu
- * @LastEditTime: 2022-01-25 11:02:17
- */
 const path = require('path')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
   entry: './index.ts',
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   output: {
     filename: 'index.js',//// 生成的fiename须要与package.json中的main一致
     path: path.resolve(__dirname, 'dist'),
