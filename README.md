@@ -2,4 +2,11 @@
 
 ## 概述 ##
 
-ynos 关于一个组件库、工具库等相关功能s
+ynos是一个关于包含前后端的组件库、工具库等相关功能、支持多平台应用
+
+
+## 目录
+
+* [x] 语音识别：[ynos-speech-recognition](./ynos-speech-recognition)
+* [x] 存储功能：[ynos-storage](./ynos-storage)
+* [ ] 客户端广播：[broadcast](./ynos-wasm/)
