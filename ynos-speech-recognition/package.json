@@ -1,6 +1,6 @@
 {
   "name": "ynos-speech-recognition",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "语音识别",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yn36/ynos/tree/main/ynos-speech-recognition"
+    "url": "git+https://github.com/yn36/ynos.git"
   },
   "license": "MIT",
   "devDependencies": {
