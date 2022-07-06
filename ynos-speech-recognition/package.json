@@ -1,6 +1,6 @@
 {
   "name": "ynos-speech-recognition",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "语音识别",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,6 +17,10 @@
   "files": [
     "dist*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yn36/ynos/tree/main/ynos-speech-recognition"
+  },
   "license": "MIT",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
