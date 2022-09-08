@@ -77,9 +77,6 @@ const options = {
 
 app.use(Storage, options)
 
-//or
-//Vue.use(Storage);
-
 const { proxy } = getCurrentInstance() as ComponentInternalInstance
 
 proxy?.ls.set('foo', 'boo');
@@ -89,8 +86,6 @@ proxy?.ls.get('foo');
 proxy?.ls.get('boo', 10); //if not set boo returned default 10
 proxy?.ls.remove('foo');
 ```
-
-
 
 Use in js file
 ``` js
@@ -141,3 +136,59 @@ ls.get('foo');
 #### `Vue.ls.clear()`
 
 清除存储。
+
+
+## 使用加密后的 SessionStorage
+
+
+## 使用
+
+Vue2.x
+
+``` js
+import { sessionStorage } from 'ynos-storage';
+
+
+Vue.use(sessionStorage);
+
+new Vue({
+    el: '#app',
+    mounted: function() {
+        Vue.ss.set('foo', 'boo');
+        Vue.ss.get('foo');
+        Vue.ss.get('boo', 10); //if not set boo returned default 10
+        
+        Vue.ss.remove('foo');
+    }
+});
+```
+
+Vue3.x
+``` js
+import { sessionStorage } from 'ynos-storage';
+import { getCurrentInstance, ComponentInternalInstance } from 'vue'
+
+app.use(sessionStorage)
+
+const { proxy } = getCurrentInstance() as ComponentInternalInstance
+
+proxy?.ss.set('foo', 'boo');
+proxy?.ss.get('foo');
+proxy?.ss.get('boo', 10); //if not set boo returned default 10
+proxy?.ss.remove('foo');
+```
+Use in js file
+``` js
+// sesionStore.js
+import { sessionStorage }  from 'ynos-storage';
+
+const ss = sessionStorage.useStorage()
+
+export default ss
+
+// somefile.js
+import ss from 'sesionStore.js';
+
+ss.set('foo', 'boo');
+ss.get('foo');
+```

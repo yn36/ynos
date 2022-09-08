@@ -1,6 +1,6 @@
 {
   "name": "ynos-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "本地存储库",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

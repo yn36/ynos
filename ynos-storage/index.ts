@@ -3,11 +3,12 @@
  * @Version: 1.0
  * @Autor: yn36
  * @Date: 2022-04-24 10:17:12
- * @LastEditors: yn36
- * @LastEditTime: 2022-07-01 16:16:20
+ * @LastEditors: jiajun.wu
+ * @LastEditTime: 2022-09-08 14:37:30
  */
 import { WebStorage } from './src//WebStorage'
 import { MemoryStorage } from './src/MemoryStorage'
+export { SessionStorage as Session, default as sessionStorage } from './src/SessionStorage'
 
 export interface Option {
   /** storage name session, local, memory */
