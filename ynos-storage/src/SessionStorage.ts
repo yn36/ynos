@@ -4,7 +4,7 @@
  * @Autor: jiajun.wu
  * @Date: 2022-09-08 14:00:48
  * @LastEditors: jiajun.wu
- * @LastEditTime: 2022-09-08 14:36:28
+ * @LastEditTime: 2022-09-08 15:05:17
  */
 
 export class SessionStorage {
@@ -46,7 +46,7 @@ export class SessionStorage {
   * @param {any} def 默认值 如果不存在则返回默认值
   * @return {T}
   */
-  public get<T>(key: string, def: any): T {
+  public get<T>(key: string, def?: any): T {
     let val = this.getObj()
     return val[key] || def;
   }
